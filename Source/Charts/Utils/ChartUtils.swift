@@ -80,7 +80,7 @@ extension Double
             self != 0
             else { return self }
 
-        let d = ceil(log10(self < 0 ? -self : self))
+        let d = ceil(Darwin.log10(self < 0 ? -self : self))
         let pw = 1 - Int(d)
         let magnitude = Darwin.pow(10.0, Double(pw))
         let shifted = (self * magnitude).rounded()
