@@ -82,7 +82,7 @@ extension Double
 
         let d = ceil(log10(self < 0 ? -self : self))
         let pw = 1 - Int(d)
-        let magnitude = pow(10.0, Double(pw))
+        let magnitude = Darwin.pow(10.0, Double(pw))
         let shifted = (self * magnitude).rounded()
         return shifted / magnitude
     }
@@ -102,7 +102,7 @@ extension Double
             !i.isNaN
             else { return 0 }
 
-        return Int(ceil(-log10(i))) + 2
+        return Int(ceil(-Darwin.log10(i))) + 2
     }
 }
 
